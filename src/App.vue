@@ -9,7 +9,7 @@ export default {
     return {
       user: {
         name: 'Viktoria',
-        age: '19',
+        age: 19,
       }
     }
   },
