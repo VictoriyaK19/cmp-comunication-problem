@@ -1,26 +1,36 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <active-user :username="user.name" :userage="user.age"></active-user>
+  <user-data @add-user="addUser"></user-data>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  data() {
+    return {
+      user: {
+        name: 'Viktoria',
+        age: '19',
+      }
+    }
+  },
+  methods: {
+    addUser(name, age) {
+      this.user = {name: name,
+      age : +age};
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+html {
+  font-family: sans-serif;
+}
+div {
+  margin: 2rem auto;
+  max-width: 40rem;
+  border-radius: 12px;
+  border: 1px solid#ccc;
+  padding: 1rem;
 }
 </style>
